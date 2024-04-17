@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -68,3 +69,28 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+=======
+# Capstone
+캡스톤 프로젝트_실시간교통안내시스템
+
+## 프로젝트 설명
+### 개요
+#### 1. 도로교통 이력 자료를 활용 -> 미래 교통상황 예측 및 이를 기반으로 한 추천 경로 제공
+#### 2. 다양한 방식의 모델링 -> 도로 네트워크의 구간 별 미래 교통상황 예측 및 활용
+#### 3. 설계 목적에 따라, 통행시간 최단경로 및 예상통행시간(Estimated Time of Arrival, ETA) 변화 최소경로 등 사용자 목적에 부합하는 추천 경로 제공
+
+### 요구사항
+#### 1. 데이터 수집
+도로공사 차량 검지기 시스템(VDS) 데이터 등 다양한 자료 활용
+#### 2. 모델링 : 도로구간별 미래 교통상황 예측 모델 + 경로 탐색 모델
+#### 3. 아웃풋 : 출-도착지 입력 시 추천 경로 및 ETA도출
+
+## 진행과정
+1. 데이터 수집 및 전처리
+
+2. 경로 탐색 알고리즘
+
+3. 인공지능 모델 탐색 & 모델링
+
+4. 서비스 구현 - Web
+>>>>>>> 2253dd43cdf2d30211bfeb77c011a9a79dc7e007
