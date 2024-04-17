@@ -1,3 +1,11 @@
+## 사용법
+npm i -g create-react-app
+
+npm i axios
+
+npm i react-naver-maps
+
+
 # Capstone
 캡스톤 프로젝트_실시간교통안내시스템
 
@@ -23,9 +31,3 @@
 4. 서비스 구현 - Web
 
 
-## 사용법
-npm i -g create-react-app
-
-npm i axios
-
-npm i react-naver-maps
