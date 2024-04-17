@@ -21,3 +21,9 @@
 3. 인공지능 모델 탐색 & 모델링
 
 4. 서비스 구현 - Web
+
+
+## 사용법
+npm i -g create-react-app
+npm i axios
+npm i react-naver-maps
