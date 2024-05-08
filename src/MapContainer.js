@@ -49,23 +49,25 @@ const MapContainer = (props) => {
     
 
     // //다중경유지 그리기
+    
     const handleDrawPath = () => {
         if (map && nodeAddr) {
             const waypoints = [];
             for (let i = 1; i < nodeAddr.length - 1; i++) {
                 const waypoint = {
-                    y: nodeAddr[i].lat, // 위도와 경도는 문자열로 제공되므로 숫자로 변환해야 합니다.
-                    x: nodeAddr[i].lng
+                    x: `${parseFloat(nodeAddr[i].lng)}`,
+                    y: `${parseFloat(nodeAddr[i].lat)}` 
                 };
                 waypoints.push(waypoint);
             }
             const origin = {
-                y: nodeAddr[0].lat,
-                x: nodeAddr[0].lng
+                x: `${parseFloat(nodeAddr[0].lng)}`,
+                y: `${parseFloat(nodeAddr[0].lat)}`
+                
             };
             const destination = {
-                y: nodeAddr[nodeAddr.length - 1].lat,
-                x: nodeAddr[nodeAddr.length - 1].lng
+                x: `${parseFloat(nodeAddr[nodeAddr.length - 1].lng)}`,
+                y: `${parseFloat(nodeAddr[nodeAddr.length - 1].lat)}`
             };
             multiWaypoint(map, origin, destination, waypoints);
         }

@@ -37,7 +37,7 @@ const drawmulti = async (map, origin, destination, waypoints) => {
         origin: origin,
         destination: destination,
         waypoints: waypoints,
-        priority: 'DISTANCE',
+        priority: 'RECOMMEND',
         car_fuel: 'GASOLINE',
         car_hipass: false,
         alternatives: false,
@@ -45,6 +45,7 @@ const drawmulti = async (map, origin, destination, waypoints) => {
     };
 
     try {
+        console.log(requestData)
         const response = await fetch(url, {
             method: 'POST',
             headers: headers,
@@ -56,6 +57,7 @@ const drawmulti = async (map, origin, destination, waypoints) => {
         }
 
         const data = await response.json();
+        console.log(data)
         drawPolylineFromData(map, data);
     } catch (error) {
         console.error('Error:', error);
