@@ -12,7 +12,7 @@ const MapContainer = (props) => {
         if (typeof kakao !== 'undefined') {
             const container = document.getElementById('myMap');
             const options = {
-                center: new kakao.maps.LatLng(37.526362213, 127.028476085), // 초기 센터 압구정역 좌표
+                center: new kakao.maps.LatLng(36.321655, 127.378953),//초기 지도 중심 - 대전
                 level: 12
             };
             const mapInstance = new kakao.maps.Map(container, options);
@@ -48,8 +48,8 @@ const MapContainer = (props) => {
         // };
     
 
-    // //다중경유지 그리기
-    
+
+    //다중경유지 그리기
     const handleDrawPath = () => {
         if (map && nodeAddr) {
             const waypoints = [];
@@ -76,7 +76,9 @@ const MapContainer = (props) => {
     return (
         <div style={{ display: 'flex' }}>
             <div id='myMap' style={{ width: '80%', height: '950px' }}></div>
-            <button onClick={handleDrawPath}>Draw Path</button>
+            <div>
+                <button onClick={handleDrawPath}>Draw Path</button>
+            </div>
         </div>
     );
 };

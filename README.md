@@ -5,6 +5,8 @@ npm i axios
 
 npm i react-naver-maps
 
+npm i pandas
+
 다 설치하고 app.py에서 nodelatlng.scv위치 확인하기. 안맞으면 맞는 위치에 가져다두기
 플라스크 잘 깔려있으면 app.py 오른쪽 위에 시작버튼 있음. 눌러서 백엔드 서버 실행
 
