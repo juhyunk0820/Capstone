@@ -8,6 +8,7 @@ const { kakao } = window;
 const MapContainer = (props) => {
     const nodeAddr = props.nodeAddr;
     const [map, setMap] = useState(null);
+
     useEffect(() => {
         if (typeof kakao !== 'undefined') {
             const container = document.getElementById('myMap');
@@ -50,6 +51,7 @@ const MapContainer = (props) => {
 
 
     //다중경유지 그리기
+    
     const handleDrawPath = () => {
         if (map && nodeAddr) {
             const waypoints = [];

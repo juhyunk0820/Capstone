@@ -1,18 +1,50 @@
-import React, { useEffect } from 'react';
-import ResultList from './ResultList';
+// LeftContainer.js
+import React, { useState } from 'react';
+import axios from 'axios';
 
-const LeftContainer = ({ nodeAddr }) => {
-    // nodeAddr 값이 변경될 때마다 실행되는 useEffect
-    useEffect(() => {
-    }, [nodeAddr]);
+const LeftContainer = ({ setNodeAddr }) => {
+    const [origin, setOrigin] = useState('');
+    const [destination, setDestination] = useState('');
+
+    const handleSearch = () => {
+        const nodeNames = [
+            '서울특별시청',
+            '반포IC',
+            '서초IC'
+        ];
+        if (origin && destination) {
+            axios.post('http://localhost:5000/get-node-info', {
+                nodeNames: nodeNames
+            })
+            .then(response => {
+                setNodeAddr(response.data);
+            })
+            .catch(error => {
+                console.error('Error fetching node info:', error);
+            });
+        }
+    };
 
     return (
         <div id="js_route_search_detail" className="route_search_detail open" style={{ width: '30%' }}>
-            <div className="route_search_detail_title" style={{ width: '150px' }}>구간 소통정보</div>
+            <div className="search">
+                <input
+                    type="text"
+                    placeholder="출발지"
+                    value={origin}
+                    onChange={(event) => setOrigin(event.target.value)}
+                />
+                <input
+                    type="text"
+                    placeholder="도착지"
+                    value={destination}
+                    onChange={(event) => setDestination(event.target.value)}
+                />
+                <button onClick={handleSearch}>검색</button>
+            </div>
             <div className="route_search_detail_content">
                 <div className="route_info"></div>
             </div>
-            <ResultList nodeAddr={nodeAddr} />
         </div>
     );
 };

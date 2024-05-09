@@ -1,0 +1,188 @@
+/* Main + LeftContainer */
+.MainLeftContainer {
+    position: relative;
+    left: 52.01%;
+    right: 2.13%;
+    top: 9.75%;
+    bottom: 9.75%;
+    background: #FFFFFF;
+    border-radius: 20px;
+  }
+  
+  /* mapcontainer */
+  .MapContainer {
+    position: absolute;
+    width: 1040px;
+    height: 924px;
+    left: 400px;
+    top: 100px;
+  }
+  
+  /* map 임시 */
+  .MapTemporary {
+    position: absolute;
+    width: 297px;
+    height: 78px;
+    left: 371px;
+    top: 398px;
+    font-family: 'Roboto';
+    font-weight: 900;
+    font-size: 26px;
+    line-height: 38px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #000000;
+  }
+  
+  /* left_wrap */
+  .LeftWrap {
+    position: relative; /* Change to relative */
+    left: 0px;
+    right: 1040px;
+    top: 100px;
+    bottom: 0px;
+    background: #FFFFFF;
+  }
+  
+  /* route_detail */
+  .RouteDetail {
+    position: absolute;
+    width: 377px;
+    height: 924px;
+    left: 400px;
+    top: 0px;
+    background: #ACBCB8;
+  }
+  
+  /* image 1 */
+  .Image1 {
+    position: absolute;
+    width: 353px;
+    height: 377px;
+    left: 12px;
+    top: 238px;
+    background: url(image.png);
+  }
+  
+  /* search */
+  .Search {
+    position: absolute;
+    width: 400px;
+    height: 150px;
+    left: 0px;
+    top: 0px;
+    background: #005556;
+  }
+  
+  /* 검색 */
+  .SearchText {
+    position: absolute;
+    width: 60px;
+    height: 92px;
+    left: 322px;
+    top: 29px;
+    background: #ACE2E1;
+    border-radius: 10px;
+    font-family: 'Roboto';
+    font-weight: 900;
+    font-size: 26px;
+    line-height: 38px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #000000;
+  }
+  
+  /* 출 도착지 바꿈 */
+  .ChangeOriginDestination {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    left: 266px;
+    top: 55px;
+    background: #008DDA;
+    mix-blend-mode: overlay;
+  }
+  
+  /* 도착지 */
+  .Destination {
+    position: absolute;
+    width: 230px;
+    height: 40px;
+    left: 20px;
+    top: 82px;
+  }
+  
+  /* 검색 칸 */
+  .SearchBox {
+    position: absolute;
+    left: 5%;
+    right: 37.5%;
+    top: 54.67%;
+    bottom: 18.67%;
+    background: #FFFFFF;
+    opacity: 0.8;
+    border-radius: 10px;
+  }
+  
+  /* 출발지 */
+  .Origin {
+    position: absolute;
+    width: 230px;
+    height: 40px;
+    left: 20px;
+    top: 25px;
+  }
+  
+  /* 출발 IC/TC 검색 */
+  .OriginSearch {
+    position: absolute;
+    left: 6.92%;
+    right: 37.5%;
+    top: 16.67%;
+    bottom: 56.67%;
+    font-family: 'Roboto';
+    font-weight: 900;
+    font-size: 26px;
+    line-height: 38px;
+    color: #BFB9B6;
+  }
+  
+  /* header */
+  .Header {
+    position: absolute;
+    width: 1440px;
+    height: 100px;
+    left: 0px;
+    top: 0px;
+    background: #FFFFFF;
+  }
+  
+  /* logo */
+.Logo {
+    position: absolute;
+    width: 400px;
+    height: 100px;
+    left: 0px;
+    top: 0px;
+    background: #D9FAFA;
+}
+
+  /* 로고 or 브랜드명 임시 */
+  .LogoText {
+    position: absolute;
+    width: 236px;
+    height: 38px;
+    left: 82px;
+    top: 31px;
+    font-family: 'Roboto';
+    font-weight: 900;
+    font-size: 26px;
+    line-height: 38px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #000000;
+  }
+  
