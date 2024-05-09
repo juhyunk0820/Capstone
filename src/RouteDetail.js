@@ -1,8 +1,8 @@
 import React from 'react';
 
-function ResultList({ nodeAddr }) {
+function RouteDetail({ nodeAddr }) {
     return (
-        <div style={{ width : '200px',padding: '20px', boxSizing: 'border-box', textAlign: 'center' }}>
+        <div>
             <h2>Results</h2>
             <ul style={{ listStyle: 'none', padding: 0 }}>
                 {nodeAddr.map((node, index) => (
@@ -13,4 +13,4 @@ function ResultList({ nodeAddr }) {
     );
 }
 
-export default ResultList;
+export default RouteDetail;

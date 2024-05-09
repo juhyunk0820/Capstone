@@ -1,38 +1,109 @@
-.App {
-  text-align: center;
+*{
+  padding-left: 25px; 
+  padding-right: 25px; 
+}
+.LandingPage{
+  width: 1440;
+  height: 1024;
+  overflow-x: hidden;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.Header {
+  position: absolute;
+  width: 100%;
+  height: 100px;
+  left: 0px;
+  top: 0px;
+  background: #005556;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 10vh;
+.SearchBox {
+  position: absolute;
+  width: 450px;
+  height: 150px;
+  left: 0;
+  top: 100px;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: flex-start; /* Align items to the left */
 }
 
-.App-link {
-  color: #61dafb;
+.SearchTextInput {
+  width: calc(100% - 150px); /* Calculate width to include padding */
+  height: 30px;
+  margin-bottom: 10px;
+  font-family: 'Roboto';
+  font-weight: 900;
+  font-size: 26px;
+  line-height: 38px;
+  color: #BFB9B6;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.SearchButton {
+  position: absolute;
+  width: 80px;
+  height: 90px;
+  right: 20px;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 900;
+  font-size: 26px;
+  line-height: 38px;
+  background: #ACE2E1;
+  border-radius: 10px;
+}
+
+/* mapcontainer */
+#myMap {
+  position: absolute;
+  width: calc(100% - 150px);
+  height: 924px;
+  top: 100px;
+  left: 500px;
+}
+
+/* LeftContainer */
+.LeftContainer {
+  position: absolute;
+  width: 450px;
+  height: 924px;
+  left: 0px;
+  top: 250px;
+  bottom: 0px;
+  background: #d9dbe3;
+}
+
+/* route_detail */
+.RouteDetail {
+  position: absolute;
+  width: 300px;
+  height: 924px;
+  left: 450px;
+  top: 100px;
+  background: #d95513;
+
+}
+
+
+
+
+
+
+/* 로고 or 브랜드명 임시 */
+.Logo{
+  position: absolute;
+  width: 236px;
+  height: 38px;
+  left: 82px;
+  top: 31px;
+  font-family: 'Roboto';
+  font-weight: 900;
+  font-size: 26px;
+  line-height: 38px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #000000;
 }

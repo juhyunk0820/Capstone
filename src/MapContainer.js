@@ -25,10 +25,10 @@ const MapContainer = (props) => {
 
     //#마커자동찍기
     useEffect(() => {
-        makeMarkers(map, nodeAddr); 
-        
+        if (map && nodeAddr && nodeAddr.length > 0) {
+            makeMarkers(map, nodeAddr); 
+        }
     }, [map, nodeAddr]);
-    
     
         // #1대1 경로 그리기 함수
         // const handleDrawPath = () => {
@@ -77,7 +77,7 @@ const MapContainer = (props) => {
     
     return (
         <div style={{ display: 'flex' }}>
-            <div id='myMap' style={{ width: '80%', height: '950px' }}></div>
+            <div id='myMap'></div>
             <div>
                 <button onClick={handleDrawPath}>Draw Path</button>
             </div>
