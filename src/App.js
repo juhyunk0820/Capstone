@@ -3,13 +3,8 @@ import './App.css';
 
 const App = () => {
     return (
-        <div>
-            <header className='App-header'>
-                <h1>CAPSTONE</h1>
-            </header>
-            <div>
+        <div>  
                 <LandingPage />
-            </div>
         </div>
     );
 };

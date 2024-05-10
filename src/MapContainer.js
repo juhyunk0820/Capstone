@@ -8,11 +8,12 @@ const { kakao } = window;
 const MapContainer = (props) => {
     const nodeAddr = props.nodeAddr;
     const [map, setMap] = useState(null);
+
     useEffect(() => {
         if (typeof kakao !== 'undefined') {
             const container = document.getElementById('myMap');
             const options = {
-                center: new kakao.maps.LatLng(37.526362213, 127.028476085), // 초기 센터 압구정역 좌표
+                center: new kakao.maps.LatLng(36.321655, 127.378953),//초기 지도 중심 - 대전
                 level: 12
             };
             const mapInstance = new kakao.maps.Map(container, options);
@@ -24,10 +25,30 @@ const MapContainer = (props) => {
 
     //#마커자동찍기
     useEffect(() => {
-        makeMarkers(map, nodeAddr); 
-        
+        if (map && nodeAddr && nodeAddr.length > 0) {
+            makeMarkers(map, nodeAddr); 
+            if (map && nodeAddr) {
+                const waypoints = [];
+                for (let i = 1; i < nodeAddr.length - 1; i++) {
+                    const waypoint = {
+                        x: `${parseFloat(nodeAddr[i].lng)}`,
+                        y: `${parseFloat(nodeAddr[i].lat)}` 
+                    };
+                    waypoints.push(waypoint);
+                }
+                const origin = {
+                    x: `${parseFloat(nodeAddr[0].lng)}`,
+                    y: `${parseFloat(nodeAddr[0].lat)}`
+                    
+                };
+                const destination = {
+                    x: `${parseFloat(nodeAddr[nodeAddr.length - 1].lng)}`,
+                    y: `${parseFloat(nodeAddr[nodeAddr.length - 1].lat)}`
+                };
+                multiWaypoint(map, origin, destination, waypoints); //api 계속불러서 일단 막아놓음
+            }
+        }
     }, [map, nodeAddr]);
-    
     
         // #1대1 경로 그리기 함수
         // const handleDrawPath = () => {
@@ -48,35 +69,12 @@ const MapContainer = (props) => {
         // };
     
 
-    // //다중경유지 그리기
-    
-    const handleDrawPath = () => {
-        if (map && nodeAddr) {
-            const waypoints = [];
-            for (let i = 1; i < nodeAddr.length - 1; i++) {
-                const waypoint = {
-                    x: `${parseFloat(nodeAddr[i].lng)}`,
-                    y: `${parseFloat(nodeAddr[i].lat)}` 
-                };
-                waypoints.push(waypoint);
-            }
-            const origin = {
-                x: `${parseFloat(nodeAddr[0].lng)}`,
-                y: `${parseFloat(nodeAddr[0].lat)}`
-                
-            };
-            const destination = {
-                x: `${parseFloat(nodeAddr[nodeAddr.length - 1].lng)}`,
-                y: `${parseFloat(nodeAddr[nodeAddr.length - 1].lat)}`
-            };
-            multiWaypoint(map, origin, destination, waypoints);
-        }
-    };
+
+    //다중경유지 그리기
     
     return (
         <div style={{ display: 'flex' }}>
-            <div id='myMap' style={{ width: '80%', height: '950px' }}></div>
-            <button onClick={handleDrawPath}>Draw Path</button>
+            <div id='myMap'></div>
         </div>
     );
 };

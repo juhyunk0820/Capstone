@@ -1,18 +1,20 @@
-import React, { useEffect } from 'react';
-import ResultList from './ResultList';
+import React, { useState } from 'react';
+import RouteDetail from './RouteDetail';
 
-const LeftContainer = ({ nodeAddr }) => {
-    // nodeAddr 값이 변경될 때마다 실행되는 useEffect
-    useEffect(() => {
-    }, [nodeAddr]);
+const LeftContainer = (props) => {
+    const nodeAddr = props.nodeAddr;
+    const [showRouteDetail, setShowRouteDetail] = useState(false); // State to track visibility
+
+    const toggleRouteDetail = () => {
+        setShowRouteDetail(!showRouteDetail); // Toggle visibility
+    };
 
     return (
-        <div id="js_route_search_detail" className="route_search_detail open" style={{ width: '30%' }}>
-            <div className="route_search_detail_title" style={{ width: '150px' }}>구간 소통정보</div>
-            <div className="route_search_detail_content">
-                <div className="route_info"></div>
-            </div>
-            <ResultList nodeAddr={nodeAddr} />
+        <div className="LeftContainer">
+            <h2 style={{textAlign: "center"}}>예상 도착 시간은 99시 99분입니다</h2>
+
+            <button onClick={toggleRouteDetail} style={{ float: 'right', marginRight: '20px' }}>Show/hide</button>
+            {showRouteDetail && <RouteDetail nodeAddr={nodeAddr} />}
         </div>
     );
 };
