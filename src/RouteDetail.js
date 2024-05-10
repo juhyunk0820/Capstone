@@ -3,10 +3,11 @@ import React from 'react';
 function RouteDetail({ nodeAddr }) {
     return (
         <div>
-            <h2>Results</h2>
-            <ul style={{ listStyle: 'none', padding: 0 }}>
+            
+            <ul className='RouteDetailComponent' style={{ listStyle: 'none', padding: 0 }}>
+                <h2>Results</h2>
                 {nodeAddr.map((node, index) => (
-                    <li key={index} style={{ fontSize: '25px', color: 'black' }}>{node.name}</li>
+                    <li key={index}>{node.name}</li>
                 ))}
             </ul>
         </div>

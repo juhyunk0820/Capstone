@@ -27,21 +27,28 @@ function makeMarkers(map, coordinates) {
             map: map
         });
 
-        // 인포윈도우 생성
-        const infowindow = new kakao.maps.InfoWindow({
-            content: `<div style="text-align: center; color: black; font-size: 20px;">${index+1}번째 ${coord.name}</div>` // 인포윈도우에 표시할 내용
+        //커스텀오버레이의 내용, 추후 index는 지워도 될듯
+        var content =   `<div class="customoverlay">
+                            <span class="title">${index+1}번째 ${coord.name}</span>
+                        </div>`;
+
+
+        //'<div class="customOverlay"><a href="#">${index+1}번째 ${coord.name}</a></div>',
+        var customOverlay  = new kakao.maps.CustomOverlay({
+            position: new kakao.maps.LatLng(lat, lng),
+            content: content,
+            yAnchor: 0,
         });
         
-        
-
-        // 마커에 마우스 이벤트 등록
+        // 마커를 클릭했을 때 커스텀 오버레이를 표시합니다
         kakao.maps.event.addListener(marker, 'mouseover', function() {
-            infowindow.open(map, marker); // 마커 위에 인포윈도우 표시
+            customOverlay .setMap(map);
         });
 
         kakao.maps.event.addListener(marker, 'mouseout', function() {
-            infowindow.close(); // 마커에서 마우스가 벗어나면 인포윈도우 닫기
+            customOverlay .setMap(null);   
         });
+        
     });
 }
 

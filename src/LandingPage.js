@@ -1,5 +1,5 @@
 // LandingPage.js
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import MapContainer from './MapContainer';
 import LeftContainer from './LeftContainer';
 import axios from 'axios';
@@ -7,30 +7,23 @@ import axios from 'axios';
 const LandingPage = () => {
     const [origin, setOrigin] = useState('');
     const [destination, setDestination] = useState('');
-    const [nodeAddr, setNodeAddr] = useState([]); // Define nodeAddr state variable
-    
+    const [nodeAddr, setNodeAddr] = useState([]);
+    const [mapKey, setMapKey] = useState(0); // 새로운 키 상태 추가
+
     const handleSearch = () => {
         const nodeNames = [
             '서울특별시청',
             '반포IC',
             '서초IC',
-            '양재IC',
-            '금토JC',
-            '대왕판교IC',
-            '판교JC',
-            '판교IC',
-            '서울TG',
-            '신갈JC',
-            '안성IC',
-            '대전광역시청',
+            '양재IC'
         ];
-        //초기값이 아닌 origin destination이 있을시 루트배열 얻어오기로 바꿔야함
         if (origin && destination) {
             axios.post('http://localhost:5000/get-node-info', {
                 nodeNames: nodeNames
             })
             .then(response => {
                 setNodeAddr(response.data);
+                setMapKey(prevKey => prevKey + 1); // 키 업데이트
             })
             .catch(error => {
                 console.error('Error fetching node info:', error);
@@ -39,30 +32,31 @@ const LandingPage = () => {
     };
 
     return (
-
         <div>
-            
+            <div className='Header'>
+                <h2 className='Logo'>로고</h2>
+            </div>
             <div className="SearchBox">
                 <input
                     className='SearchTextInput'
                     type="text"
-                    placeholder="출발지"
+                    placeholder=" 출발지"
                     value={origin}
                     onChange={(event) => setOrigin(event.target.value)}
                 />
                 <input
                     className='SearchTextInput'
                     type="text"
-                    placeholder="도착지"
+                    placeholder=" 도착지"
                     value={destination}
                     onChange={(event) => setDestination(event.target.value)}
                 />
                 <button className='SearchButton' onClick={handleSearch}>검색</button>
             </div>
             <div>
-                <LeftContainer setNodeAddr={setNodeAddr}/> {/* Pass setNodeAddr as a prop */}
+                <LeftContainer nodeAddr={nodeAddr}/> {/* Pass setNodeAddr as a prop */}
             </div>
-            <div>
+            <div key={mapKey}>
                 <MapContainer nodeAddr={nodeAddr} /> {/* Pass nodeAddr as a prop */}
             </div>
         </div>
@@ -70,6 +64,7 @@ const LandingPage = () => {
 };
 
 export default LandingPage;
+
 
 // const nodeNames = [
     //   '서울특별시청',

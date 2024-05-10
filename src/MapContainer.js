@@ -27,6 +27,26 @@ const MapContainer = (props) => {
     useEffect(() => {
         if (map && nodeAddr && nodeAddr.length > 0) {
             makeMarkers(map, nodeAddr); 
+            if (map && nodeAddr) {
+                const waypoints = [];
+                for (let i = 1; i < nodeAddr.length - 1; i++) {
+                    const waypoint = {
+                        x: `${parseFloat(nodeAddr[i].lng)}`,
+                        y: `${parseFloat(nodeAddr[i].lat)}` 
+                    };
+                    waypoints.push(waypoint);
+                }
+                const origin = {
+                    x: `${parseFloat(nodeAddr[0].lng)}`,
+                    y: `${parseFloat(nodeAddr[0].lat)}`
+                    
+                };
+                const destination = {
+                    x: `${parseFloat(nodeAddr[nodeAddr.length - 1].lng)}`,
+                    y: `${parseFloat(nodeAddr[nodeAddr.length - 1].lat)}`
+                };
+                multiWaypoint(map, origin, destination, waypoints); //api 계속불러서 일단 막아놓음
+            }
         }
     }, [map, nodeAddr]);
     
@@ -52,35 +72,9 @@ const MapContainer = (props) => {
 
     //다중경유지 그리기
     
-    const handleDrawPath = () => {
-        if (map && nodeAddr) {
-            const waypoints = [];
-            for (let i = 1; i < nodeAddr.length - 1; i++) {
-                const waypoint = {
-                    x: `${parseFloat(nodeAddr[i].lng)}`,
-                    y: `${parseFloat(nodeAddr[i].lat)}` 
-                };
-                waypoints.push(waypoint);
-            }
-            const origin = {
-                x: `${parseFloat(nodeAddr[0].lng)}`,
-                y: `${parseFloat(nodeAddr[0].lat)}`
-                
-            };
-            const destination = {
-                x: `${parseFloat(nodeAddr[nodeAddr.length - 1].lng)}`,
-                y: `${parseFloat(nodeAddr[nodeAddr.length - 1].lat)}`
-            };
-            multiWaypoint(map, origin, destination, waypoints);
-        }
-    };
-    
     return (
         <div style={{ display: 'flex' }}>
             <div id='myMap'></div>
-            <div>
-                <button onClick={handleDrawPath}>Draw Path</button>
-            </div>
         </div>
     );
 };

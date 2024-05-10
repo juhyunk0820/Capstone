@@ -15,7 +15,7 @@ const drawPolylineFromData = (map, data) => {
                     path: linePath,
                     strokeWeight: 5,
                     strokeColor: '#000000',
-                    strokeOpacity: 0.7,
+                    strokeOpacity: 0.8,
                     strokeStyle: 'solid'
                 });
 
@@ -45,7 +45,6 @@ const drawmulti = async (map, origin, destination, waypoints) => {
     };
 
     try {
-        console.log(requestData)
         const response = await fetch(url, {
             method: 'POST',
             headers: headers,
@@ -57,7 +56,7 @@ const drawmulti = async (map, origin, destination, waypoints) => {
         }
 
         const data = await response.json();
-        console.log(data)
+
         drawPolylineFromData(map, data);
     } catch (error) {
         console.error('Error:', error);
