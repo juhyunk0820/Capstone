@@ -15,7 +15,16 @@ const LandingPage = () => {
             '서울특별시청',
             '반포IC',
             '서초IC',
-            '양재IC'
+            '양재IC',
+            '금토JC',
+            '대왕판교IC',
+            '판교JC',
+            '판교IC',
+            '서울TG',
+            '신갈JC',
+            '마성IC',
+            '서용인JCT',
+            '용인IC'
         ];
         if (origin && destination) {
             axios.post('http://localhost:5000/get-node-info', {
