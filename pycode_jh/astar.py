@@ -1,11 +1,11 @@
 import pandas as pd
 import heapq
 
-# Load the CSV file
+# CSV파일 불러오기
 file_path = 'from_to_cost(수정본csv,시청추가).csv'
 data = pd.read_csv(file_path)
 
-# Creating the graph as a dictionary of dictionaries
+# 불러온 파일로 그래프 구현현
 graph = {}
 name_to_id = {}  # Map to store node name to node ID
 
@@ -50,7 +50,7 @@ def a_star_algorithm(graph, start, goal):
     return None, float('inf')  # In case no path is found
 
 
-# Function to translate node names to IDs and find path
+# 이름 변환 & A*경로 탐색
 def find_path_by_names(start_name, goal_name):
     start_id = name_to_id.get(start_name)
     goal_id = name_to_id.get(goal_name)
@@ -60,7 +60,6 @@ def find_path_by_names(start_name, goal_name):
     return path, total_cost
 
 
-# Example usage with start and goal node names
 start_name = '울산광역시청'
 goal_name = '부산광역시청'
 path, total_cost = find_path_by_names(start_name, goal_name)
