@@ -31,8 +31,8 @@ const MapContainer = (props) => {
             makeMarkers(map, nodeAddr); 
             //multiWaypoint(map, nodeAddr); //다중경유지 길찾기 실행
             //directions(map, nodeAddr); //1대1 일반길찾기
-            //straight(map,nodeAddr);//일직선 긋기
-            onlyorigindest(map,nodeAddr); //처음과 마지막만 일반길찾기
+            straight(map,nodeAddr);//일직선 긋기
+            //onlyorigindest(map,nodeAddr); //처음과 마지막만 일반길찾기
         }
     }, [map, nodeAddr]);
     

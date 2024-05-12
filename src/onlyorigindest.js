@@ -32,7 +32,7 @@ async function onlyorigindest(map, nodeAddr) {
             path: linePath,
             strokeWeight: 5,
             strokeColor: '#FF0000',
-            strokeOpacity: 1,
+            strokeOpacity: 0.7,
             strokeStyle: 'strokeStyle'
         });
         

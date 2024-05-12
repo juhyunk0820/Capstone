@@ -30,7 +30,7 @@ async function directions(map, nodeAddr) {
             const polyline = new kakao.maps.Polyline({
                 path: linePath,
                 strokeWeight: 5,
-                strokeColor: '#FF0000',
+                strokeColor: '#0000FF',
                 strokeOpacity: 0.4,
                 strokeStyle: 'strokeStyle'
             });
