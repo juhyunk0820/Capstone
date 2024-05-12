@@ -15,7 +15,7 @@ const drawPolylineFromData = (map, data) => {
                     path: linePath,
                     strokeWeight: 5,
                     strokeColor: '#000000',
-                    strokeOpacity: 0.8,
+                    strokeOpacity: 0.4,
                     strokeStyle: 'solid'
                 });
 
@@ -25,7 +25,25 @@ const drawPolylineFromData = (map, data) => {
     });
 };
 
-const drawmulti = async (map, origin, destination, waypoints) => {
+const drawmulti = async (map, nodeAddr) => {
+    const waypoints = [];
+    for (let i = 1; i < nodeAddr.length - 1; i++) {
+        const waypoint = {
+            x: `${parseFloat(nodeAddr[i].lng)}`,
+            y: `${parseFloat(nodeAddr[i].lat)}` 
+        };
+        waypoints.push(waypoint);
+    }
+    const origin = {
+        x: `${parseFloat(nodeAddr[0].lng)}`,
+        y: `${parseFloat(nodeAddr[0].lat)}`
+        
+    };
+    const destination = {
+        x: `${parseFloat(nodeAddr[nodeAddr.length - 1].lng)}`,
+        y: `${parseFloat(nodeAddr[nodeAddr.length - 1].lat)}`
+    };
+
     const url = 'https://apis-navi.kakaomobility.com/v1/waypoints/directions';
     const REST_API_KEY = '7ac167a239af7e3b778713095534cb73';
     const headers = {

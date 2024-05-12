@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import drawPath from './drawpath';
+import directions from './directions';
 import multiWaypoint from './multiWaypoint';
 import makeMarkers from './makeMarkers';
 
@@ -27,50 +27,14 @@ const MapContainer = (props) => {
     useEffect(() => {
         if (map && nodeAddr && nodeAddr.length > 0) {
             makeMarkers(map, nodeAddr); 
-            if (map && nodeAddr) {
-                const waypoints = [];
-                for (let i = 1; i < nodeAddr.length - 1; i++) {
-                    const waypoint = {
-                        x: `${parseFloat(nodeAddr[i].lng)}`,
-                        y: `${parseFloat(nodeAddr[i].lat)}` 
-                    };
-                    waypoints.push(waypoint);
-                }
-                const origin = {
-                    x: `${parseFloat(nodeAddr[0].lng)}`,
-                    y: `${parseFloat(nodeAddr[0].lat)}`
-                    
-                };
-                const destination = {
-                    x: `${parseFloat(nodeAddr[nodeAddr.length - 1].lng)}`,
-                    y: `${parseFloat(nodeAddr[nodeAddr.length - 1].lat)}`
-                };
-                multiWaypoint(map, origin, destination, waypoints); //api 계속불러서 일단 막아놓음
-            }
+            //multiWaypoint(map, nodeAddr); //자동경유지 길찾기 실행
+            //directions(map, nodeAddr); //1대1 길찾기
+            
         }
     }, [map, nodeAddr]);
     
-        // #1대1 경로 그리기 함수
-        // const handleDrawPath = () => {
-        //     if (map && nodeAddr) {
-        //         for (let i = 0; i < nodeAddr.length - 1; i++) {
-        //             const originLat = nodeAddr[i].lat;
-        //             const originLng = nodeAddr[i].lng;
-        //             const destinationLat = nodeAddr[i + 1].lat;
-        //             const destinationLng = nodeAddr[i + 1].lng;
-            
-        //             // lat과 lng를 쉼표로 구분된 문자열로 변환
-        //             const origin = `${originLng},${originLat}`;
-        //             const destination = `${destinationLng},${destinationLat}`;
-            
-        //             drawPath(map, origin, destination);
-        //         }
-        //     }
-        // };
+        
     
-
-
-    //다중경유지 그리기
     
     return (
         <div style={{ display: 'flex' }}>

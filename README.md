@@ -1,7 +1,8 @@
 ## 사용법
 npm i -g create-react-app
-
-npm i axios, react-naver-maps,pandas,flask
+pip install axios
+pip install flask
+pip install pandas
 
 
 다 설치하고 app.py에서 nodelatlng.scv위치 확인하기. 안맞으면 맞는 위치에 가져다두기
