@@ -14,4 +14,4 @@ pip install pandas
 초기노드값은 LandingPage.js에서 수정
 
 ## 구성
-![예시 이미지](C:\Users\Yun\Documents\GitHub\Capstone\images\map.png)
+![map](https://github.com/juhyunk0820/Capstone/assets/52120957/5c4eba53-5503-4795-9732-0f3145c576ce)
