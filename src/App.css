@@ -6,10 +6,10 @@
 }
 
 .Header {
-  width: 100%; /* 화면 너비에 맞게 조절 */
+  width: 100%;
   height: 100px;
   background: #005556;
-  position: fixed; /* 페이지 스크롤에 고정 */
+  position: fixed;
   top: 0;
   left: 0;
 }
@@ -17,16 +17,19 @@
 .SearchBox {
   position: relative; /* 상대 위치 지정 */
   width: 450px; /* 부모 요소의 너비 */
-  height: 150px;
+  height: 200px;
   left: 20px;
   top: 100px;
   display: flex;
   flex-direction: column; /* 수직 방향으로 정렬 */
   align-items: flex-start; /* 좌측 정렬 */
+  padding-top: 20px;
 }
 
+
 .SearchTextInput {
-  width: calc(100% - 20px); /* 오른쪽 스크롤바 공간을 고려한 너비 */
+  width: 70%; /* 변경 */
+  max-width: 400px; /* 변경 */
   height: 40px;
   margin-bottom: 10px;
   font-family: 'Roboto';
@@ -34,7 +37,7 @@
   font-size: 26px;
   line-height: 38px;
   color: #BFB9B6;
-  padding: 0 10px; /* 좌우 여백 추가 */
+  padding: 0 10px;
 }
 
 .SearchButton {
@@ -46,6 +49,7 @@
   line-height: 38px;
   background: #ACE2E1;
   border-radius: 10px;
+  float: right;
 }
 
 .autocomplete {
@@ -78,16 +82,7 @@
   background: #d9dbe3;
 }
 
-/* route_detail */
-.RouteDetailComponent {
-  position: absolute;
-  width: 300px;
-  height: 924px;
-  left: 450px;
-  top: 100px;
-  background: #d95513;
 
-}
 /* 로고 or 브랜드명 임시 */
 .Logo {
   width: 200px;
@@ -123,6 +118,7 @@
   font-family: '고딕체', sans-serif;
   font-size:24px;
 }
+
 
 .RouteDetailComponent {
   width: 300px;

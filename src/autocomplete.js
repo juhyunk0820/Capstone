@@ -5,7 +5,6 @@ const Autocomplete = ({ placeholder, dataList, onSelectOption }) => {
     const [inputValue, setInputValue] = useState('');
     const [autoCompleteList, setAutoCompleteList] = useState([]);
     const [activeIndex, setActiveIndex] = useState(-1);
-    const [isFocused, setIsFocused] = useState(false);
     const autoCompleteRef = useRef(null);
     const listRef = useRef(null);
 
@@ -42,13 +41,6 @@ const Autocomplete = ({ placeholder, dataList, onSelectOption }) => {
         }
     };
 
-    const handleFocus = () => {
-        setIsFocused(true);
-    };
-
-    const handleBlur = () => {
-        setIsFocused(false);
-    };
 
     useEffect(() => {
         const handleClickOutside = (event) => {
@@ -80,8 +72,6 @@ const Autocomplete = ({ placeholder, dataList, onSelectOption }) => {
                 value={inputValue}
                 onChange={handleInputChange}
                 onKeyDown={handleKeyPress}
-                onFocus={handleFocus}
-                onBlur={handleBlur}
             />
             <div
                 className="autocomplete"

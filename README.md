@@ -12,3 +12,6 @@ pip install pandas
 눌러서 백엔드 서버 실행
 해당 폴더에서 npm start하면 리액트 실행
 초기노드값은 LandingPage.js에서 수정
+
+## 구성
+![예시 이미지](C:\Users\Yun\Documents\GitHub\Capstone\images\map.png)

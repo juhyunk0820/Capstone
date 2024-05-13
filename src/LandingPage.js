@@ -48,16 +48,16 @@ const LandingPage = () => {
                 <h2 className='Logo'>로고</h2>
             </div>
             <div className="SearchBox">
-            <Autocomplete
-                placeholder="출발지를 입력하세요"
-                dataList={dataList}
-                onSelectOption={setOrigin} 
-            />
-            <Autocomplete
-                placeholder="도착지를 입력하세요"
-                dataList={dataList}
-                onSelectOption={setDestination}
-            />
+                <Autocomplete
+                    placeholder="출발지를 입력하세요"
+                    dataList={dataList}
+                    onSelectOption={setOrigin} 
+                />
+                <Autocomplete
+                    placeholder="도착지를 입력하세요"
+                    dataList={dataList}
+                    onSelectOption={setDestination}
+                />
                 <button className='SearchButton' onClick={handleSearch}>검색</button>
             </div>
             <div>
