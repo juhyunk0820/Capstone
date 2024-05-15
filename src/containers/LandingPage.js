@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import MapContainer from './MapContainer';
 import LeftContainer from './LeftContainer';
 import axios from 'axios';
-import Autocomplete from '../autocomplete';
+import Autocomplete from '../components/autocomplete';
 const dataList = [
     '서울특별시청',
     '인천광역시청',
