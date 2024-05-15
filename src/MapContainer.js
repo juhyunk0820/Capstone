@@ -25,7 +25,7 @@ const MapContainer = (props) => {
     
     
 
-    //#마커자동찍기
+    //#마커자동찍기 & 길찾기 종류 4가지
     useEffect(() => {
         if (map && nodeAddr && nodeAddr.length > 0) {
             makeMarkers(map, nodeAddr); 
@@ -40,7 +40,7 @@ const MapContainer = (props) => {
     
     
     return (
-        <div style={{ display: 'flex' }}>
+        <div>
             <div id='myMap'></div>
         </div>
     );
