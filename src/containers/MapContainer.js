@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import directions from './directions';
-import multiWaypoint from './multiWaypoint';
-import straight from './straight';
-import onlyorigindest from './onlyorigindest';
-import makeMarkers from './makeMarkers';
+import directions from '../directions';
+import multiWaypoint from '../multiWaypoint';
+import straight from '../straight';
+import onlyorigindest from '../onlyorigindest';
+import makeMarkers from '../makeMarkers';
 
 const { kakao } = window;
 

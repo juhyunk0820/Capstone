@@ -27,9 +27,9 @@ function makeMarkers(map, coordinates) {
             map: map
         });
 
-        //커스텀오버레이의 내용, 추후 index는 지워도 될듯
+        //커스텀오버레이의 내용
         var content =   `<div class="customoverlay">
-                            <span class="title">${index+1}번째 ${coord.name}</span>
+                            <span class="title">${coord.name}</span>
                         </div>`;
 
         var customOverlay  = new kakao.maps.CustomOverlay({

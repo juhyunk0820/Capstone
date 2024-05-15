@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import MapContainer from './MapContainer';
 import LeftContainer from './LeftContainer';
 import axios from 'axios';
-import Autocomplete from './autocomplete';
+import Autocomplete from '../autocomplete';
 const dataList = [
     '서울특별시청',
     '인천광역시청',
@@ -22,13 +22,8 @@ const LandingPage = () => {
 
     
     const handleSearch = () => {
-        const nodeNames = [
-            '서울특별시청',
-            '반포IC',
-            '서초IC',
-            '양재IC'
-        ];
         if (origin && destination) {
+            const nodeNames = [origin, destination];
             axios.post('http://localhost:5000/get-node-info', {
                 nodeNames: nodeNames
             })
