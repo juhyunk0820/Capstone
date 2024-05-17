@@ -4,15 +4,7 @@ import MapContainer from './MapContainer';
 import LeftContainer from './LeftContainer';
 import axios from 'axios';
 import Autocomplete from '../components/autocomplete';
-const dataList = [
-    '서울특별시청',
-    '인천광역시청',
-    '대전광역시청',
-    '광주광역시청',
-    '대구광역시청',
-    '부산광역시청',
-    '울산광역시청'
-];
+
 const LandingPage = () => {
     const [origin, setOrigin] = useState('');
     const [destination, setDestination] = useState('');
@@ -93,12 +85,10 @@ const LandingPage = () => {
             <div className="SearchBox">
                 <Autocomplete
                     placeholder="출발지를 입력하세요"
-                    dataList={dataList}
                     onSelectOption={setOrigin} 
                 />
                 <Autocomplete
                     placeholder="도착지를 입력하세요"
-                    dataList={dataList}
                     onSelectOption={setDestination}
                 />
                 <button className='SearchButton' onClick={handleSearch}>검색</button>
