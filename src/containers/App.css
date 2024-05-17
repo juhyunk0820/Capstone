@@ -1,22 +1,37 @@
-
 .LandingPage {
   width: 100%; /* 너비를 화면 너비에 맞추기 위해 백분율로 설정 */
   height: 100vh; /* 높이를 화면 높이에 맞추기 위해 뷰포트 높이(100vh)로 설정 */
   overflow-x: hidden; /* 수평 스크롤 막기 */
+  background: linear-gradient(180deg, #FFF 0%, #D9FDFF 100%); /* 그라데이션 배경 추가 */
 }
+
 
 .Header {
   width: 100%;
   height: 100px;
-  background: #005556;
   position: fixed;
   top: 0;
   left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid gray;
+  padding: 0 20px;
 }
 
+.Logo {
+  width: 200px; /* 로고 이미지의 가로 크기를 지정 (원본 크기) */
+  height: 100%;
+  background-image: url('../images/Fossil.png');
+  background-position: center;
+}
+
+
+
+
 .SearchBox {
-  position: relative; /* 상대 위치 지정 */
-  width: 450px; /* 부모 요소의 너비 */
+  position: relative;
+  width: 450px;
   height: 200px;
   left: 20px;
   top: 100px;
@@ -26,10 +41,8 @@
   padding-top: 20px;
 }
 
-
 .SearchTextInput {
-  width: 70%; /* 변경 */
-  max-width: 400px; /* 변경 */
+  width: 80%; /* 변경 */
   height: 40px;
   margin-bottom: 10px;
   font-family: 'Roboto';
@@ -42,15 +55,18 @@
 
 .SearchButton {
   width: 80px;
-  height: 40px;
+  height: 100px;
   font-family: 'Roboto';
   font-weight: 900;
   font-size: 26px;
   line-height: 38px;
   background: #ACE2E1;
   border-radius: 10px;
-  float: right;
+  position: absolute; /* 절대 위치 설정 */
+  right: 0; /* 오른쪽에 위치 */
+  bottom: 100px; /* 아래에 위치 */
 }
+
 
 .autocomplete {
   position: absolute; /* 절대 위치 지정 */
@@ -61,14 +77,14 @@
   width: 80%; /* 너비 80% 설정 */
 }
 
-
 /* mapcontainer */
 #myMap {
   position: absolute;
-  width: 1200px;
-  height: 924px;
-  top: 100px;
-  left: 450px;
+  width: 900px;
+  height: 824px;
+  top: 110px;
+  left: 650px;
+  border-radius: 20px;
 }
 
 /* LeftContainer */
@@ -83,24 +99,6 @@
 }
 
 
-/* 로고 or 브랜드명 임시 */
-.Logo {
-  width: 200px;
-  height: 60px;
-  font-family: 'Roboto';
-  font-weight: 900;
-  font-size: 26px;
-  line-height: 38px;
-  display: flex;
-  align-items: center;
-  text-align: center;
-  color: #000000;
-  background: royalblue;
-  position: absolute;
-  top: 20px; /* 헤더 내에서 가운데 정렬 */
-  left: 50%;
-  transform: translateX(-50%); /* 수평 정렬 */
-}
 
 
 
@@ -133,4 +131,39 @@
 .RouteDetailComponent li {
   border: 1px solid black;
   background-color: royalblue;
+}
+
+.autocomplete {
+  background-color: white;
+  max-height: 100px;
+  overflow-y: auto;
+  position: relative;
+}
+
+.autocomplete.showButton .SearchButton {
+  margin-top: 10px;
+  width: 80px;
+  height: 40px;
+  font-family: 'Roboto';
+  font-weight: 900;
+  font-size: 26px;
+  line-height: 38px;
+  background: #ACE2E1;
+  border-radius: 10px;
+  margin-left: auto;
+}
+
+.autocomplete.hideButton .SearchButton {
+  display: none;
+}
+
+.autocomplete .autocompleteItem {
+  padding: 5px;
+  background-color: white;
+  box-shadow: 0 0 0 0.5px gray;
+  margin-bottom: 2px;
+}
+
+.autocomplete .autocompleteItem.active {
+  background-color: lightblue;
 }

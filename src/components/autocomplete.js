@@ -46,6 +46,11 @@ const Autocomplete = ({ placeholder,  onSelectOption }) => {
                     handleSelectOption(autoCompleteList[activeIndex]);
                 }
                 break;
+            case 'Tab': // Tab 키 추가
+                if (activeIndex !== -1 && autoCompleteList.length > 0) {
+                    handleSelectOption(autoCompleteList[activeIndex]);
+                }
+                break;
             default:
                 break;
         }
