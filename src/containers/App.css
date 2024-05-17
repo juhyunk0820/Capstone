@@ -81,13 +81,12 @@
 #myMap {
   position: absolute;
   width: 900px;
-  height: 824px;
+  height: 814px;
   top: 110px;
   left: 600px;
   border-radius: 20px;
 }
 
-/* LeftContainer */
 .LeftContainer {
   width: 450px;
   max-width: 90%; /* 최대 너비를 화면의 90%로 설정 */
@@ -95,14 +94,7 @@
   position: absolute;
   top: 250px; /* SearchBox 아래에서 130px 떨어진 위치에 배치 */
   left: 0;
-  background: #e3e6f0;
 }
-
-
-
-
-
-
 
 .customoverlay {
   display: block;
@@ -121,21 +113,26 @@
 .RouteDetailComponent {
   width: 300px;
   max-width: 60%;
-  height: auto;
+  height: 400px; /* 적절한 높이 설정 */
   position: absolute;
   top: 120px;
   left: calc(50% - 150px);
   overflow-y: auto; /* 세로 스크롤 추가 */
+  background: white; /* 배경색 추가 (선택 사항) */
+  padding: 10px; /* 패딩 추가 */
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* 박스 쉐도우 추가 (선택 사항) */
 }
 
+/* Styling the list */
 .RouteDetailComponent ul {
   list-style: none; /* 리스트 스타일 제거 */
   padding: 0; /* 패딩 제거 */
   margin: 0; /* 마진 제거 */
 }
 
+/* Styling the list items */
 .RouteDetailComponent li {
-  border: 1px solid black;
+  border: 1px solid black; /* 테두리 추가 */
   padding: 10px; /* 각 아이템 간격을 조절하기 위한 패딩 */
   margin-bottom: 5px; /* 각 아이템 간격을 조절하기 위한 마진 */
 }

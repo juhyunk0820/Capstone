@@ -14,9 +14,9 @@ const LeftContainer = (props) => {
 
             <button onClick={toggleRouteDetail} style={{ float: 'right', marginRight: '20px' }}>Show/hide</button>
             {showRouteDetail && (
-                <div>
-                    <ul className='RouteDetailComponent' style={{ listStyle: 'none', padding: 0 }}>
-                        <h2>Results</h2>
+                <div className='RouteDetailComponent'>
+                    <h2>경로</h2>
+                    <ul>
                         {nodeAddr.map((node, index) => (
                             <li key={index}>{node.name}</li>
                         ))}
