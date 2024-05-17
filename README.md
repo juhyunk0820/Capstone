@@ -1,3 +1,8 @@
+## 버전정보
+node.js v20.11.1
+
+npm     10.4.0
+
 ## 사용법
 npm i -g create-react-app
 
@@ -18,4 +23,5 @@ https://developers.kakao.com/console/app
 초기노드값은 LandingPage.js에서 수정
 
 ## 구성
-![map](https://github.com/juhyunk0820/Capstone/assets/52120957/af077759-0c1e-4b30-b45d-2b7959e6a060)
+![미래로](https://github.com/juhyunk0820/Capstone/assets/52120957/117b15ef-69e5-4f93-911f-2c1d2433035e)
+![설계도](https://github.com/juhyunk0820/Capstone/assets/52120957/6e27e7a6-0e28-41ea-9ce9-eeeff616b1d9)
