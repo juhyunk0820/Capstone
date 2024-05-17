@@ -1,9 +1,11 @@
 ## 버전정보
-node.js v20.11.1
 
-npm     10.4.0
+| 소프트웨어  | 버전      |
+|-------------|-----------|
+| Node.js     | v20.11.1  |
+| npm         | 10.4.0    |
 
-## 사전 설치
+## 설치
 npm i -g create-react-app
 
 pip install axios
@@ -11,7 +13,8 @@ pip install axios
 pip install flask
 
 pip install pandas
-<hr>
+
+## 확인사항
 <pre>
 <code> app.py의
 df = pd.read_csv(경로)</code>
