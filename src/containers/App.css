@@ -77,67 +77,6 @@
   width: 80%; /* 너비 80% 설정 */
 }
 
-/* mapcontainer */
-#myMap {
-  position: absolute;
-  width: 900px;
-  height: 814px;
-  top: 110px;
-  left: 600px;
-  border-radius: 20px;
-}
-
-.LeftContainer {
-  width: 450px;
-  max-width: 90%; /* 최대 너비를 화면의 90%로 설정 */
-  height: calc(100vh - 250px); /* 화면 높이에서 헤더와 SearchBox의 높이를 뺀 값 */
-  position: absolute;
-  top: 250px; /* SearchBox 아래에서 130px 떨어진 위치에 배치 */
-  left: 0;
-}
-
-.customoverlay {
-  display: block;
-  background: #50627F;
-  color: #fff;
-  text-align: center;
-  height: 28px;
-  line-height:22px;
-  border-radius:4px;
-  padding:0px 10px;
-  font-family: '고딕체', sans-serif;
-  font-size:24px;
-}
-
-
-.RouteDetailComponent {
-  width: 300px;
-  max-width: 60%;
-  height: 400px; /* 적절한 높이 설정 */
-  position: absolute;
-  top: 120px;
-  left: calc(50% - 150px);
-  overflow-y: auto; /* 세로 스크롤 추가 */
-  background: white; /* 배경색 추가 (선택 사항) */
-  padding: 10px; /* 패딩 추가 */
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* 박스 쉐도우 추가 (선택 사항) */
-}
-
-/* Styling the list */
-.RouteDetailComponent ul {
-  list-style: none; /* 리스트 스타일 제거 */
-  padding: 0; /* 패딩 제거 */
-  margin: 0; /* 마진 제거 */
-}
-
-/* Styling the list items */
-.RouteDetailComponent li {
-  border: 1px solid black; /* 테두리 추가 */
-  padding: 10px; /* 각 아이템 간격을 조절하기 위한 패딩 */
-  margin-bottom: 5px; /* 각 아이템 간격을 조절하기 위한 마진 */
-}
-
-
 .autocomplete {
   background-color: white;
   max-height: 100px;
@@ -172,6 +111,69 @@
 .autocomplete .autocompleteItem.active {
   background-color: lightblue;
 }
+
+
+/* mapcontainer */
+#myMap {
+  position: absolute;
+  width: 900px;
+  height: 814px;
+  top: 110px;
+  left: 600px;
+  border-radius: 20px;
+}
+
+.LeftContainer {
+  width: 450px;
+  max-width: 90%; /* 최대 너비를 화면의 90%로 설정 */
+  height: calc(100vh - 250px); /* 화면 높이에서 헤더와 SearchBox의 높이를 뺀 값 */
+  position: absolute;
+  top: 250px; /* SearchBox 아래에서 130px 떨어진 위치에 배치 */
+  left: 0;
+}
+
+.customoverlay {
+  display: block;
+  background: #50627F;
+  color: #fff;
+  text-align: center;
+  height: 28px;
+  line-height:22px;
+  border-radius:4px;
+  padding:0px 10px;
+  font-family: '고딕체', sans-serif;
+  font-size:24px;
+}
+
+
+.RouteDetailComponent {
+  width: 400px;
+  max-width: 70%;
+  height: 500px; 
+  position: absolute;
+  top: 120px;
+  left: calc(50% - 150px);
+  overflow-y: auto; /* 세로 스크롤 추가 */
+  background: white; /* 배경색 추가 (선택 사항) */
+  padding: 10px; /* 패딩 추가 */
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* 박스 쉐도우 추가 (선택 사항) */
+}
+
+/* Styling the list */
+.RouteDetailComponent ul {
+  list-style: none; /* 리스트 스타일 제거 */
+  padding: 0; /* 패딩 제거 */
+  margin: 0; /* 마진 제거 */
+}
+
+/* Styling the list items */
+.RouteDetailComponent li {
+  border: 1px solid black; /* 테두리 추가 */
+  padding: 10px; /* 각 아이템 간격을 조절하기 위한 패딩 */
+  margin-bottom: 5px; /* 각 아이템 간격을 조절하기 위한 마진 */
+}
+
+
 
 h1 {font-family:Arial,"Lucida Sans",sans-serif;font-size:2em;width:90%;
   margin-bottom:30px;margin-left:20px;padding-bottom:10px;

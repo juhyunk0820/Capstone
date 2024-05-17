@@ -111,7 +111,7 @@ const Autocomplete = ({ placeholder,  onSelectOption }) => {
                             backgroundColor: index === activeIndex ? 'lightblue' : 'white', // 선택된 항목은 연한 파란색, 기본 배경은 흰색
                             padding: '5px', // 항목의 높이를 맞추기 위해 패딩 추가
                             boxShadow: '0 0 0 0.5px gray', // 얇은 회색 경계선
-                            marginBottom: '2px' // 항목 간 간격 추가
+                            marginBottom: '1px', // 항목 간 간격 추가
                         }}
                         onClick={() => handleSelectOption(option)}
                         onMouseEnter={() => setActiveIndex(index)}
