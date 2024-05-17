@@ -172,3 +172,7 @@
 .autocomplete .autocompleteItem.active {
   background-color: lightblue;
 }
+
+h1 {font-family:Arial,"Lucida Sans",sans-serif;font-size:2em;width:90%;
+  margin-bottom:30px;margin-left:20px;padding-bottom:10px;
+  border-bottom:4px solid black;}
