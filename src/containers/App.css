@@ -49,7 +49,7 @@
   font-weight: 900;
   font-size: 26px;
   line-height: 38px;
-  color: #BFB9B6;
+  background-color: #e3e6f0;
   padding: 0 10px;
 }
 
@@ -63,7 +63,7 @@
   background: #ACE2E1;
   border-radius: 10px;
   position: absolute; /* 절대 위치 설정 */
-  right: 0; /* 오른쪽에 위치 */
+  right: 20px; /* 오른쪽에 위치 */
   bottom: 100px; /* 아래에 위치 */
 }
 
@@ -83,7 +83,7 @@
   width: 900px;
   height: 824px;
   top: 110px;
-  left: 650px;
+  left: 600px;
   border-radius: 20px;
 }
 
@@ -95,7 +95,7 @@
   position: absolute;
   top: 250px; /* SearchBox 아래에서 130px 떨어진 위치에 배치 */
   left: 0;
-  background: #d9dbe3;
+  background: #e3e6f0;
 }
 
 
@@ -120,18 +120,26 @@
 
 .RouteDetailComponent {
   width: 300px;
-  max-width: 60%; /* 최대 너비를 화면의 60%로 설정 */
-  height: auto; /* 내용에 맞게 높이 자동 조절 */
+  max-width: 60%;
+  height: auto;
   position: absolute;
-  top: 120px; /* 헤더 아래에서 20px 떨어진 위치에 배치 */
-  left: calc(50% - 150px); /* 가운데 정렬 */
-  background: #d95513;
+  top: 120px;
+  left: calc(50% - 150px);
+  overflow-y: auto; /* 세로 스크롤 추가 */
+}
+
+.RouteDetailComponent ul {
+  list-style: none; /* 리스트 스타일 제거 */
+  padding: 0; /* 패딩 제거 */
+  margin: 0; /* 마진 제거 */
 }
 
 .RouteDetailComponent li {
   border: 1px solid black;
-  background-color: royalblue;
+  padding: 10px; /* 각 아이템 간격을 조절하기 위한 패딩 */
+  margin-bottom: 5px; /* 각 아이템 간격을 조절하기 위한 마진 */
 }
+
 
 .autocomplete {
   background-color: white;
