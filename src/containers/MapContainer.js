@@ -1,8 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import directions from '../components/directions';
-import multiWaypoint from '../components/multiWaypoint';
-import straight from '../components/straight';
-import onlyorigindest from '../components/onlyorigindest';
+import drawRoutes from '../components/drawRoutes';
 import makeMarkers from '../components/makeMarkers';
 
 const { kakao } = window;
@@ -29,10 +26,7 @@ const MapContainer = (props) => {
     useEffect(() => {
         if (map && nodeAddr && nodeAddr.length > 0) {
             makeMarkers(map, nodeAddr); 
-            //multiWaypoint(map, nodeAddr); //다중경유지 길찾기 실행
-            //directions(map, nodeAddr); //1대1 일반길찾기
-            straight(map,nodeAddr);//일직선 긋기
-            //onlyorigindest(map,nodeAddr); //처음과 마지막만 일반길찾기
+            drawRoutes(map,nodeAddr);
         }
     }, [map, nodeAddr]);
     
