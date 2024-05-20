@@ -13,7 +13,7 @@ def get_node_info():
     if not node_names:
         return jsonify({'error': 'No node names provided'}), 400
     
-    df = pd.read_csv(r"C:\Users\howar\OneDrive - Sejong University\문서\GitHub\Capstone\nodelatlng.csv")
+    df = pd.read_csv(r"capstone\nodelatlng.csv")
     node_info = []
     
     for name in node_names:

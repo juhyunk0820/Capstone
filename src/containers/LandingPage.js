@@ -3,8 +3,7 @@ import React, { useState } from 'react';
 import MapContainer from './MapContainer';
 import LeftContainer from './LeftContainer';
 import axios from 'axios';
-import Autocomplete from '../components/autocomplete'; // Updated import path for Autocomplete
-import logo from '../images/Fossil.png'; // Updated import path for the logo image
+import Autocomplete from '../Component/autocomplete'; // Updated import path for Autocomplete
 
 
 const LandingPage = () => {
@@ -39,9 +38,6 @@ const LandingPage = () => {
 
     return (
         <div className="LandingPage">
-            <div className="Header">
-                <img src={logo} alt="로고" className="Logo" />
-            </div>
             <div className="SearchBox">
                 <Autocomplete placeholder="출발지를 입력하세요" onSelectOption={setOrigin} />
                 <Autocomplete placeholder="도착지를 입력하세요" onSelectOption={setDestination} />

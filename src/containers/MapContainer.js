@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import drawRoutes from '../components/drawRoutes';
-import makeMarkers from '../components/makeMarkers';
+import drawRoutes from '../Component/drawRoutes';
+import makeMarkers from '../Component/makeMarkers';
 
 const { kakao } = window;
 
