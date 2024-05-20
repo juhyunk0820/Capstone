@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import RouteDetail from './RouteDetail';
 
 const LeftContainer = (props) => {
     const nodeAddr = props.nodeAddr;
@@ -11,10 +10,19 @@ const LeftContainer = (props) => {
 
     return (
         <div className="LeftContainer">
-            <h2 style={{textAlign: "center"}}>예상 도착 시간은 99시 99분입니다</h2>
+            <h2 style={{ textAlign: "center" }}>예상 도착 시간은 99시 99분입니다</h2>
 
             <button onClick={toggleRouteDetail} style={{ float: 'right', marginRight: '20px' }}>Show/hide</button>
-            {showRouteDetail && <RouteDetail nodeAddr={nodeAddr} />}
+            {showRouteDetail && (
+                <div className='RouteDetailComponent'>
+                    <h2>경로</h2>
+                    <ul>
+                        {nodeAddr.map((node, index) => (
+                            <li key={index}>{node.name}</li>
+                        ))}
+                    </ul>
+                </div>
+            )}
         </div>
     );
 };
