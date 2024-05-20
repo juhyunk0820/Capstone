@@ -37,7 +37,7 @@ pip install pandas
 ## 확인사항
 <pre>
 <code> app.py의
-df = pd.read_csv(scv경로)</code>
+df = pd.read_csv(r'scv경로')</code>
 </pre>
 
 ![scv확인](https://github.com/juhyunk0820/Capstone/assets/52120957/4e6c2c0a-f0cd-49d0-93a8-e44458835ea2)
