@@ -123,6 +123,8 @@
   border-radius: 20px;
 }
 
+
+
 .LeftContainer {
   width: 450px;
   max-width: 90%; /* 최대 너비를 화면의 90%로 설정 */
@@ -131,20 +133,6 @@
   top: 250px; /* SearchBox 아래에서 130px 떨어진 위치에 배치 */
   left: 0;
 }
-
-.customoverlay {
-  display: block;
-  background: #50627F;
-  color: #fff;
-  text-align: center;
-  height: 28px;
-  line-height:22px;
-  border-radius:4px;
-  padding:0px 10px;
-  font-family: '고딕체', sans-serif;
-  font-size:24px;
-}
-
 
 .RouteDetailComponent {
   width: 400px;
@@ -159,22 +147,96 @@
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* 박스 쉐도우 추가 (선택 사항) */
 }
 
-/* Styling the list */
-.RouteDetailComponent ul {
-  list-style: none; /* 리스트 스타일 제거 */
-  padding: 0; /* 패딩 제거 */
-  margin: 0; /* 마진 제거 */
+.ordered-nav {
+  position: relative;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: block;
 }
 
-/* Styling the list items */
-.RouteDetailComponent li {
-  border: 1px solid black; /* 테두리 추가 */
-  padding: 10px; /* 각 아이템 간격을 조절하기 위한 패딩 */
-  margin-bottom: 5px; /* 각 아이템 간격을 조절하기 위한 마진 */
+.ordered-nav::before {
+  /* Vertical line that connects all of the pages listed in the ordered nav */
+  content: '';
+  position: absolute;
+  z-index: -1;
+  left: 6px;
+  top: 8px;
+  bottom: 16px;
+  width: 3px;
+  background-color: #27A4FC;
 }
 
+.ordered-nav--link {
+  padding-left: 1.5rem;
+  margin: 0.75rem 0;
+  position: relative;
+  border-radius: 10px;
+}
 
+.ordered-nav--link::before {
+  /* Circular icon beside the ordered nav link */
+  content: '';
+  position: absolute;
+  top: calc(50% - 6px);
+  left: 0;
+  width: 9px;
+  height: 9px;
+  background-color: white;
+  border-color: #27A4FC;
+  border-width: 3px;
+  border-style: solid;
+  border-radius: 50%;
+}
+
+.ordered-nav--link:first-child {
+  margin-top: 0;
+}
+
+.ordered-nav--link:first-child::before {
+  top: 2px;
+}
+
+.ordered-nav--link:last-child {
+  margin-bottom: 0;
+}
+.ordered-nav--link:first-child .tx-link,
+.ordered-nav--link:last-child .tx-link {
+  color: rgb(77, 32, 190); /* Change text color of the first and last list items to red */
+}
+.ordered-nav--link__active .tx-link {
+  color: white;
+}
+
+.ordered-nav--link__active::before {
+  background-color: #27A4FC;
+}
+
+.tx-link {
+  font-family: 'Ubuntu', sans-serif;
+  color: #A5E2FD;
+  text-decoration: underline;
+  text-underline-position: under;
+}
+
+.ordered-nav--link:hover {
+  background-color: #e3f02a; /* Change background color on hover */
+}
 
 h1 {font-family:Arial,"Lucida Sans",sans-serif;font-size:2em;width:90%;
   margin-bottom:30px;margin-left:20px;padding-bottom:10px;
   border-bottom:4px solid black;}
+
+  
+.customoverlay {
+  display: block;
+  background: #50627F;
+  color: #fff;
+  text-align: center;
+  height: 28px;
+  line-height:22px;
+  border-radius:4px;
+  padding:0px 10px;
+  font-family: '고딕체', sans-serif;
+  font-size:24px;
+}

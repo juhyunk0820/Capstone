@@ -1,11 +1,18 @@
 import React, { useState } from 'react';
 
-const LeftContainer = (props) => {
-    const nodeAddr = props.nodeAddr;
+const LeftContainer = ({ nodeAddr, map }) => {
     const [showRouteDetail, setShowRouteDetail] = useState(false); // State to track visibility
 
     const toggleRouteDetail = () => {
         setShowRouteDetail(!showRouteDetail); // Toggle visibility
+    };
+
+    const panTo = (lat, lng) => {
+        if (window.kakao && map) {
+            const moveLatLon = new window.kakao.maps.LatLng(lat, lng);
+            map.panTo(moveLatLon);
+            map.setLevel(8);
+        }
     };
 
     return (
@@ -16,9 +23,11 @@ const LeftContainer = (props) => {
             {showRouteDetail && (
                 <div className='RouteDetailComponent'>
                     <h2>경로</h2>
-                    <ul>
+                    <ul className="ordered-nav">
                         {nodeAddr.map((node, index) => (
-                            <li key={index}>{node.name}</li>
+                            <li key={index} className="ordered-nav--link" onClick={() => panTo(node.lat, node.lng)}>
+                                <span className="tx-link">{node.name}</span>
+                            </li>
                         ))}
                     </ul>
                 </div>

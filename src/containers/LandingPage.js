@@ -1,4 +1,3 @@
-// LandingPage.js
 import React, { useState } from 'react';
 import MapContainer from './MapContainer';
 import LeftContainer from './LeftContainer';
@@ -6,12 +5,11 @@ import axios from 'axios';
 import Autocomplete from '../components/autocomplete'; // Updated import path for Autocomplete
 import logo from '../images/Fossil.png'; // Updated import path for the logo image
 
-
 const LandingPage = () => {
     const [origin, setOrigin] = useState('');
     const [destination, setDestination] = useState('');
     const [nodeAddr, setNodeAddr] = useState([]);
-    const [mapKey, setMapKey] = useState(0);
+    const [map, setMap] = useState(null);
 
     const handleSearch = () => {
         if (origin && destination) {
@@ -29,7 +27,6 @@ const LandingPage = () => {
             axios.post('http://localhost:5000/get-node-info', { nodeNames })
                 .then(response => {
                     setNodeAddr(response.data);
-                    setMapKey(prevKey => prevKey + 1);
                 })
                 .catch(error => {
                     console.error('Error fetching node info:', error);
@@ -47,10 +44,8 @@ const LandingPage = () => {
                 <Autocomplete placeholder="도착지를 입력하세요" onSelectOption={setDestination} />
                 <button className="SearchButton" onClick={handleSearch}>검색</button>
             </div>
-            <LeftContainer nodeAddr={nodeAddr} />
-            <div key={mapKey}>
-                <MapContainer nodeAddr={nodeAddr} />
-            </div>
+            <LeftContainer nodeAddr={nodeAddr} map={map} />
+            <MapContainer setMap={setMap} nodeAddr={nodeAddr} />
         </div>
     );
 };
