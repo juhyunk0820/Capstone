@@ -32,8 +32,8 @@ async function onlyorigindest(map, start, end) {
         const polyline = new kakao.maps.Polyline({
             path: linePath,
             strokeWeight: 5,
-            strokeColor: '#FF0000',
-            strokeOpacity: 0.7,
+            strokeColor: '#00498c',
+            strokeOpacity: 0.5,
             strokeStyle: 'solid'
         });
         
@@ -48,7 +48,7 @@ function straight(map, nodes) {
     const polyline = new kakao.maps.Polyline({
         path: linePath,
         strokeWeight: 5,
-        strokeColor: '#FF0000',
+        strokeColor: '#00498c',
         strokeOpacity: 0.7,
         strokeStyle: 'solid'
     });

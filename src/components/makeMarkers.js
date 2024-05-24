@@ -1,3 +1,4 @@
+import img from '../images/marker.png';
 const { kakao } = window;
 
 function makeMarkers(map, coordinates) {
@@ -8,23 +9,26 @@ function makeMarkers(map, coordinates) {
         const lat = parseFloat(coord.lat);
         const lng = parseFloat(coord.lng);
         
-        // 별도의 마커 설정
-        // const imageSrc = 'https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/markerStar.png'; // 마커이미지의 주소입니다    
-        // const imageSize = new kakao.maps.Size(30, 40);
-        // const imageOption = { offset: new kakao.maps.Point(0, 30) };
-        // let markerImage = null;
+        //별도의 마커 설정
+        const imageSrc = img; // 마커이미지의 주소입니다    
+        const imageSize = new kakao.maps.Size(20, 20);
+        const imageOption = { offset: new kakao.maps.Point(10, 15) };
 
-        // // 첫 번째와 마지막 마커에만 이미지 적용
+        // 첫 번째와 마지막 마커에만 이미지 적용
         
-        // if (coord === firstMarker || coord === lastMarker) {
-        //     markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize, imageOption);
-        // }
+        if (coord !== firstMarker && coord !== lastMarker) {
+            var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize, imageOption);
+        }
+        else{
+            markerImage = null;
+        }
         
         // 마커 생성
         const marker = new kakao.maps.Marker({
             name: coord.name,
             position: new kakao.maps.LatLng(lat, lng),
-            map: map
+            map: map,
+            image:  markerImage
         });
 
         //커스텀오버레이의 내용
