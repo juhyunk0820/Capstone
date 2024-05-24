@@ -3,7 +3,7 @@ import MapContainer from './MapContainer';
 import LeftContainer from './LeftContainer';
 import axios from 'axios';
 import Autocomplete from '../components/autocomplete'; // Updated import path for Autocomplete
-import logo from '../images/Fossil.png'; // Updated import path for the logo image
+import logo from '../images/Logo.png'; // Updated import path for the logo image
 
 const LandingPage = () => {
     const [origin, setOrigin] = useState('');

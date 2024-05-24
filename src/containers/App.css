@@ -1,10 +1,13 @@
+h1 {font-family:Arial,"Lucida Sans",sans-serif;font-size:2em;width:90%;
+  margin-bottom:30px;margin-left:20px;padding-bottom:10px;
+  border-bottom:4px solid black;}
+
 .LandingPage {
   width: 100%; /* 너비를 화면 너비에 맞추기 위해 백분율로 설정 */
   height: 100vh; /* 높이를 화면 높이에 맞추기 위해 뷰포트 높이(100vh)로 설정 */
   overflow-x: hidden; /* 수평 스크롤 막기 */
   background: linear-gradient(180deg, #FFF 0%, #D9FDFF 100%); /* 그라데이션 배경 추가 */
 }
-
 
 .Header {
   width: 100%;
@@ -25,9 +28,6 @@
   background-image: url('../images/Fossil.png');
   background-position: center;
 }
-
-
-
 
 .SearchBox {
   position: relative;
@@ -113,15 +113,7 @@
 }
 
 
-/* mapcontainer */
-#myMap {
-  position: absolute;
-  width: 900px;
-  height: 814px;
-  top: 110px;
-  left: 600px;
-  border-radius: 20px;
-}
+
 
 
 
@@ -223,11 +215,18 @@
   background-color: #e3f02a; /* Change background color on hover */
 }
 
-h1 {font-family:Arial,"Lucida Sans",sans-serif;font-size:2em;width:90%;
-  margin-bottom:30px;margin-left:20px;padding-bottom:10px;
-  border-bottom:4px solid black;}
 
-  
+
+
+  /*--------------------------------------------------- mapcontainer ---------------------------------------------------*/
+#myMap {
+  position: absolute;
+  width: 900px;
+  height: 814px;
+  top: 110px;
+  left: 600px;
+  border-radius: 20px;
+}
 .customoverlay {
   display: block;
   background: #50627F;
