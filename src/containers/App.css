@@ -202,7 +202,7 @@
 }
 .ordered-nav--link:first-child .tx-link,
 .ordered-nav--link:last-child .tx-link {
-  color: rgb(77, 32, 190); /* Change text color of the first and last list items to red */
+  color: rgb(223, 37, 236); /* Change text color of the first and last list items to red */
 }
 .ordered-nav--link__active .tx-link {
   color: white;

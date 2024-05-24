@@ -7,11 +7,11 @@ const LeftContainer = ({ nodeAddr, map }) => {
         setShowRouteDetail(!showRouteDetail); // Toggle visibility
     };
 
-    const panTo = (lat, lng) => {
+    const setCenter = (lat, lng) => {
         if (window.kakao && map) {
             const moveLatLon = new window.kakao.maps.LatLng(lat, lng);
-            map.panTo(moveLatLon);
-            map.setLevel(8);
+            map.setCenter(moveLatLon);
+            map.setLevel(7);
         }
     };
 
@@ -25,7 +25,7 @@ const LeftContainer = ({ nodeAddr, map }) => {
                     <h2>경로</h2>
                     <ul className="ordered-nav">
                         {nodeAddr.map((node, index) => (
-                            <li key={index} className="ordered-nav--link" onClick={() => panTo(node.lat, node.lng)}>
+                            <li key={index} className="ordered-nav--link" onClick={() => setCenter(node.lat, node.lng)}>
                                 <span className="tx-link">{node.name}</span>
                             </li>
                         ))}
