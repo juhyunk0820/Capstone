@@ -1,6 +1,9 @@
-h1 {font-family:Arial,"Lucida Sans",sans-serif;font-size:2em;width:90%;
-  margin-bottom:30px;margin-left:20px;padding-bottom:10px;
-  border-bottom:4px solid black;}
+body {
+  font-family: 'GmarketSansMedium';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
 
 .LandingPage {
   width: 100%; /* 너비를 화면 너비에 맞추기 위해 백분율로 설정 */
@@ -112,7 +115,35 @@ h1 {font-family:Arial,"Lucida Sans",sans-serif;font-size:2em;width:90%;
   background-color: lightblue;
 }
 
+.ErrorMessage {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(255, 0, 0, 0.8);
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  z-index: 1000; /* Ensure it appears above other elements */
+  opacity: 0;
+  animation: fadeInOut 3s forwards;
+}
 
+@keyframes fadeInOut {
+  0% {
+      opacity: 0;
+  }
+  10% {
+      opacity: 1;
+  }
+  90% {
+      opacity: 1;
+  }
+  100% {
+      opacity: 0;
+  }
+}
 
 
 
@@ -167,10 +198,10 @@ h1 {font-family:Arial,"Lucida Sans",sans-serif;font-size:2em;width:90%;
 }
 
 .ordered-nav--link::before {
-  /* Circular icon beside the ordered nav link */
+  /* 왼쪽의 원*/
   content: '';
   position: absolute;
-  top: calc(50% - 6px);
+  top: calc(50% - 7px);
   left: 0;
   width: 9px;
   height: 9px;
@@ -185,17 +216,17 @@ h1 {font-family:Arial,"Lucida Sans",sans-serif;font-size:2em;width:90%;
   margin-top: 0;
 }
 
-.ordered-nav--link:first-child::before {
-  top: 2px;
-}
 
 .ordered-nav--link:last-child {
   margin-bottom: 0;
 }
-.ordered-nav--link:first-child .tx-link,
-.ordered-nav--link:last-child .tx-link {
-  color: rgb(223, 37, 236); /* Change text color of the first and last list items to red */
+.ordered-nav--link:first-child .tx-link{
+  color: rgb(53, 25, 236);
 }
+.ordered-nav--link:last-child .tx-link{
+  color: rgb(236, 25, 25);
+}
+
 .ordered-nav--link__active .tx-link {
   color: white;
 }
@@ -206,9 +237,8 @@ h1 {font-family:Arial,"Lucida Sans",sans-serif;font-size:2em;width:90%;
 
 .tx-link {
   font-family: 'Ubuntu', sans-serif;
-  color: #A5E2FD;
-  text-decoration: underline;
-  text-underline-position: under;
+  color: #8ebdd1;
+  font-size:24px;
 }
 
 .ordered-nav--link:hover {
@@ -221,21 +251,20 @@ h1 {font-family:Arial,"Lucida Sans",sans-serif;font-size:2em;width:90%;
   /*--------------------------------------------------- mapcontainer ---------------------------------------------------*/
 #myMap {
   position: absolute;
-  width: 900px;
-  height: 814px;
-  top: 110px;
+  width: 1100px;
+  height: 864px;
+  top: 120px;
   left: 600px;
   border-radius: 20px;
 }
 .customoverlay {
   display: block;
-  background: #50627F;
+  background: #50697f;
   color: #fff;
-  text-align: center;
   height: 28px;
-  line-height:22px;
+  line-height:25px;
   border-radius:4px;
   padding:0px 10px;
   font-family: '고딕체', sans-serif;
-  font-size:24px;
+  font-size:20px;
 }

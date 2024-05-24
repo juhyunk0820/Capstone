@@ -11,13 +11,15 @@ const LeftContainer = ({ nodeAddr, map }) => {
         if (window.kakao && map) {
             const moveLatLon = new window.kakao.maps.LatLng(lat, lng);
             map.setCenter(moveLatLon);
-            map.setLevel(7);
+            map.setLevel(9);
         }
     };
-
+    const hour = "12";
+    const minute = '35';
+    
     return (
         <div className="LeftContainer">
-            <h2 style={{ textAlign: "center" }}>예상 도착 시간은 99시 99분입니다</h2>
+            <h2 style={{ textAlign: "center" }}>예상 도착 시간은 {hour}시 {minute}분입니다</h2>
 
             <button onClick={toggleRouteDetail} style={{ float: 'right', marginRight: '20px' }}>Show/hide</button>
             {showRouteDetail && (
@@ -36,4 +38,6 @@ const LeftContainer = ({ nodeAddr, map }) => {
     );
 };
 
+
 export default LeftContainer;
+

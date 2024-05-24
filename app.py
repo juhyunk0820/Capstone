@@ -28,3 +28,4 @@ def get_node_info():
     return jsonify(node_info)
 if __name__ == '__main__':
     app.run(debug=True)
+

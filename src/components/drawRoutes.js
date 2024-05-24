@@ -33,7 +33,7 @@ async function onlyorigindest(map, start, end) {
             path: linePath,
             strokeWeight: 5,
             strokeColor: '#00498c',
-            strokeOpacity: 0.5,
+            strokeOpacity: 0.6,
             strokeStyle: 'solid'
         });
         
