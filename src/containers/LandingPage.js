@@ -36,7 +36,7 @@ const LandingPage = () => {
                 '서울주JC', '통도사IC', destination
             ];
 
-            axios.post('http://localhost:5000/get-node-info', { nodeNames })
+            axios.post('http://34.47.71.145:5000/get-node-info', { nodeNames }) //gcp VM 중지 후 실행 될때마다 ip바뀜 잘 보기
                 .then(response => {
                     setNodeAddr(response.data);
                     setMapKey(prevKey => prevKey + 1); // Update mapKey to reload MapContainer
