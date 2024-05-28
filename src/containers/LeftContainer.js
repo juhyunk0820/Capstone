@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+const { kakao } = window;
 
 const LeftContainer = ({ nodeAddr, map, eta, totalHours, totalMinutes, totalSeconds }) => {
     const [showRouteDetail, setShowRouteDetail] = useState(false); // State to track visibility
@@ -8,10 +9,10 @@ const LeftContainer = ({ nodeAddr, map, eta, totalHours, totalMinutes, totalSeco
     };
 
     const setCenter = (lat, lng) => {
-        if (window.kakao && map) {
-            const moveLatLon = new window.kakao.maps.LatLng(lat, lng);
+        if (kakao && map) {
+            const moveLatLon = new kakao.maps.LatLng(lat, lng);
             map.setCenter(moveLatLon);
-            map.setLevel(9);
+            map.setLevel(8);
         }
     };
 

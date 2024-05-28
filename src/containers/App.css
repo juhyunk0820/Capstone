@@ -5,10 +5,11 @@ body {
   font-style: normal;
 }
 
+
 .LandingPage {
   width: 100%; /* 너비를 화면 너비에 맞추기 위해 백분율로 설정 */
   height: 100vh; /* 높이를 화면 높이에 맞추기 위해 뷰포트 높이(100vh)로 설정 */
-  overflow-x: hidden; /* 수평 스크롤 막기 */
+  overflow: hidden; /* 수평 스크롤 막기 */
   background: linear-gradient(180deg, #FFF 0%, #D9FDFF 100%); /* 그라데이션 배경 추가 */
 }
 
@@ -36,16 +37,17 @@ body {
   position: relative;
   width: 450px;
   height: 200px;
-  left: 20px;
-  top: 100px;
+  left: 50px;
+  top: 110px;
   display: flex;
   flex-direction: column; /* 수직 방향으로 정렬 */
   align-items: flex-start; /* 좌측 정렬 */
   padding-top: 20px;
 }
 
+
 .SearchTextInput {
-  width: 80%; /* 변경 */
+  width: 300px;
   height: 40px;
   margin-bottom: 10px;
   font-family: 'Roboto';
@@ -54,6 +56,16 @@ body {
   line-height: 38px;
   background-color: #e3e6f0;
   padding: 0 10px;
+
+}
+
+.InputContainer:first-child .SearchTextInput {
+  top: 20px;
+}
+
+/* 두 번째 input에 대한 스타일 */
+.InputContainer:nth-child(2) .SearchTextInput {
+  top: 75px;
 }
 
 .SearchButton {
@@ -65,27 +77,31 @@ body {
   line-height: 38px;
   background: #ACE2E1;
   border-radius: 10px;
-  position: absolute; /* 절대 위치 설정 */
-  right: 20px; /* 오른쪽에 위치 */
-  bottom: 100px; /* 아래에 위치 */
+  position: absolute;
+  right: 20px;
+  bottom: 100px; 
 }
 
 
 .autocomplete {
-  position: absolute; /* 절대 위치 지정 */
-  z-index: 1; /* 다른 요소 위로 올라오도록 설정 */
-  background-color: #ACE2E1; /* 배경색 설정 */
-  max-height: 100px; /* 최대 높이 지정 */
-  overflow-y: auto; /* 수직 스크롤바 표시 */
-  width: 80%; /* 너비 80% 설정 */
-}
-
-.autocomplete {
+  position: absolute;
+  width: 300px;
+  left: 2px;
+  z-index: 1; 
+  max-height: 100px; 
+  overflow-y: auto; 
   background-color: white;
-  max-height: 100px;
-  overflow-y: auto;
-  position: relative;
 }
+
+
+.autocomplete > div:first-child {
+  top: 45px;
+}
+
+.autocomplete > div:nth-child(2) {
+  top: 75px;
+}
+
 
 .autocomplete.showButton .SearchButton {
   margin-top: 10px;
@@ -104,7 +120,8 @@ body {
   display: none;
 }
 
-.autocomplete .autocompleteItem {
+.autocompleteItem {
+  width: 100px;
   padding: 5px;
   background-color: white;
   box-shadow: 0 0 0 0.5px gray;
@@ -112,9 +129,27 @@ body {
 }
 
 .autocomplete .autocompleteItem.active {
-  background-color: lightblue;
+  background-color: lightgray;
 }
 
+
+/* 라벨에 대한 스타일 */
+label[for="appt-time"] {
+  position: absolute;
+  top: 130px;
+}
+
+/* 입력 요소에 대한 스타일 */
+#appt-time {
+  position: absolute;
+  top: 130px;
+  left: 120px;
+}
+
+
+
+
+/*경고창 관련*/
 .ErrorMessage {
   position: fixed;
   top: 50%;
@@ -144,14 +179,29 @@ body {
       opacity: 0;
   }
 }
+/* 로딩 */
+.Loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* 반투명한 배경 */
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  z-index: 1000; /* Ensure it appears above other elements */
+}
 
 
-
+/*---------------------------Left Container----------------------------------- */
 
 .LeftContainer {
-  width: 450px;
-  max-width: 90%; /* 최대 너비를 화면의 90%로 설정 */
-  height: calc(100vh - 250px); /* 화면 높이에서 헤더와 SearchBox의 높이를 뺀 값 */
+  width: 500px;
+  max-width: 90%;
+  height: 900px;
   position: absolute;
   top: 300px;
   left: 0;
@@ -162,12 +212,12 @@ body {
   max-width: 70%;
   height: 500px; 
   position: absolute;
-  top: 120px;
-  left: calc(50% - 150px);
+  top: 200px;
+  left: 70px;
   overflow-y: auto; /* 세로 스크롤 추가 */
   background: white; /* 배경색 추가 (선택 사항) */
   padding: 10px; /* 패딩 추가 */
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* 박스 쉐도우 추가 (선택 사항) */
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
 
 .ordered-nav {
@@ -245,18 +295,48 @@ body {
   background-color: #e3f02a; /* Change background color on hover */
 }
 
-
-
-
-  /*--------------------------------------------------- mapcontainer ---------------------------------------------------*/
-#myMap {
-  position: absolute;
-  width: 1100px;
-  height: 864px;
-  top: 120px;
-  left: 600px;
-  border-radius: 20px;
+/*--------------------------------------------------- mapcontainer ---------------------------------------------------*/
+.MapContainer {
+  display: flex;
+  justify-content: center; /* 가로 방향 가운데 정렬 */
+  align-items: center; /* 세로 방향 가운데 정렬 */
+  width: 100%; /* 부모 요소에 맞게 너비 조절 */
+  height: 100vh; /* 뷰포트의 높이에 맞게 조절 */
 }
+
+
+#myMap {
+  max-width: 100%;
+  width: 1000px; /* 초기 너비 지정 */
+  height: 1000px; /* 초기 높이 지정 */
+  border-radius: 20px;
+  margin-left: 500px;
+  padding: 10px;
+  margin-top: -90px;
+}
+
+@media (min-width: 1001px) {
+  #myMap {
+    width: 1000px; /* 중간 크기에서의 너비 */
+    height: 1000px; /* 중간 크기에서의 높이 */
+  }
+}
+
+@media (min-width: 2001px) {
+  #myMap {
+    width: 2000px; /* 큰 크기에서의 너비 */
+    height: 1000px; /* 큰 크기에서의 높이 */
+  }
+}
+@media (min-width: 3001px) {
+  #myMap {
+    width: 3000px; /* 큰 크기에서의 너비 */
+    height: 1000px; /* 큰 크기에서의 높이 */
+  }
+}
+
+
+
 .customoverlay {
   display: block;
   background: #50697f;

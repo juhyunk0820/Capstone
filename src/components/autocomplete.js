@@ -94,12 +94,6 @@ const Autocomplete = ({ placeholder, onSelectOption, inputValue, setInputValue }
             />
             <div
                 className="autocomplete"
-                style={{
-                    backgroundColor: 'white',
-                    maxHeight: '100px',
-                    overflowY: 'auto',
-                    position: 'relative'
-                }}
                 ref={listRef}
             >
                 {autoCompleteList.map((option, index) => (
@@ -107,9 +101,9 @@ const Autocomplete = ({ placeholder, onSelectOption, inputValue, setInputValue }
                         key={option}
                         className={index === activeIndex ? 'active' : ''}
                         style={{
-                            backgroundColor: index === activeIndex ? 'lightblue' : 'white', // Selected item is light blue, default is white
+                            backgroundColor: index === activeIndex ? 'lightgray' : 'white', // Selected item is light gray, default is white
                             padding: '5px', // Add padding to match the item height
-                            boxShadow: '0 0 0 0.5px gray', // Thin gray border
+                            boxShadow: '0 0 0 1px gray', // Thin gray border
                             marginBottom: '1px', // Add spacing between items
                         }}
                         onClick={() => handleSelectOption(option)}
