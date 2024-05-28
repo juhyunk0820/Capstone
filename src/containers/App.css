@@ -153,7 +153,7 @@ body {
   max-width: 90%; /* 최대 너비를 화면의 90%로 설정 */
   height: calc(100vh - 250px); /* 화면 높이에서 헤더와 SearchBox의 높이를 뺀 값 */
   position: absolute;
-  top: 250px; /* SearchBox 아래에서 130px 떨어진 위치에 배치 */
+  top: 300px;
   left: 0;
 }
 

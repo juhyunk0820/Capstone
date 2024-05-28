@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const LeftContainer = ({ nodeAddr, map }) => {
+const LeftContainer = ({ nodeAddr, map, eta, totalHours, totalMinutes, totalSeconds }) => {
     const [showRouteDetail, setShowRouteDetail] = useState(false); // State to track visibility
 
     const toggleRouteDetail = () => {
@@ -14,12 +14,11 @@ const LeftContainer = ({ nodeAddr, map }) => {
             map.setLevel(9);
         }
     };
-    const hour = "12";
-    const minute = '35';
-    
+
     return (
         <div className="LeftContainer">
-            <h2 style={{ textAlign: "center" }}>예상 도착 시간은 {hour}시 {minute}분입니다</h2>
+            <h2 style={{ textAlign: "center" }}>예상 도착 시간은 {eta}입니다</h2>
+            <h4 style={{ textAlign: "center" }}>총 여행 시간: {totalHours}시간 {totalMinutes}분 {totalSeconds}초</h4>
 
             <button onClick={toggleRouteDetail} style={{ float: 'right', marginRight: '20px' }}>Show/hide</button>
             {showRouteDetail && (
@@ -38,6 +37,4 @@ const LeftContainer = ({ nodeAddr, map }) => {
     );
 };
 
-
 export default LeftContainer;
-
