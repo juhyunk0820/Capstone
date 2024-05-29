@@ -30,12 +30,10 @@ const App = () => {
 
     const handleSearch = () => {
         if (origin && destination && departureTime) {
-            console.log('Loading started');
 
             const start_point = origin;
             const end_point = destination;
             const start_time = departureTime;
-            console.log(start_time);
 
             axios.post('http://34.47.71.145:5000/find_path', {
                 start_point,
@@ -50,14 +48,11 @@ const App = () => {
                 setTotalMinutes(total_minutes);
                 setTotalSeconds(total_seconds);
 
-                const nodeNames = path; // path is already an array
-
-                return axios.post('http://34.47.71.145:5000/get-node-info', { nodeNames });
+                return axios.post('http://34.47.71.145:5000/get-node-info', { path });
             })
             .then(response => {
                 setNodeAddr(response.data);
                 setMapKey(prevKey => prevKey + 1);
-                console.log('Loading stopped');
             })
             .catch(error => {
                 console.error('Error fetching route info:', error);
