@@ -29,7 +29,6 @@ body {
 .Logo {
   width: 200px; /* 로고 이미지의 가로 크기를 지정 (원본 크기) */
   height: 100%;
-  background-image: url('../images/Fossil.png');
   background-position: center;
 }
 
